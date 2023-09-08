@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ELECTIVE SELECTION</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0ffff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #34568B;
+    }
+
+    h2 {
+      color: #3e3555;
+
+    }
+
+    form {
+      width: 60%;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      color: #60504e;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      background-color: #cdcdcd;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 20px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>ELECTIVE SUBJECT SELECTION</h1>
+
+  <form action="your-backend-endpoint" method="post" id="myForm">
+
+    <h2> Student details </h2>
+    <label for="name">Student Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="id">Student ID:</label><br>
+    <input type="text" id="id" name="id"><br>
+
+    <label for="cgpa">CGPA:</label><br>
+    <input type="text" id="cgpa" name="cgpa"><br>
+
+    <label for="department">Department:</label><br>
+    <input type="text" id="department" name="department"><br>
+
+    <h2> Select your preferences</h2>
+
+    <label for="first_preference">First Preference:</label><br>
+    <select id="first_preference" name="first_preference">
+      <option>Select your first preference</option>
+      <option value="graph_algorithms">Graph Algorithms</option>
+      <option value="image_processing">Image Processing</option>
+      <option value="embedded_systems">Embedded Systems</option>
+    </select><br>
+
+    <label for="second_preference">Second Preference:</label><br>
+    <select id="second_preference" name="second_preference">
+      <option>Select your second preference</option>
+      <option value="graph_algorithms">Graph Algorithms</option>
+      <option value="image_processing">Image Processing</option>
+      <option value="embedded_systems">Embedded Systems</option>
+    </select><br>
+
+    <label for="third_preference">Third Preference:</label><br>
+    <select id="third_preference" name="third_preference">
+      <option>Select your third preference</option>
+      <option value="graph_algorithms">Graph Algorithms</option>
+      <option value="image_processing">Image Processing</option>
+      <option value="embedded_systems">Embedded Systems</option>
+    </select><br>
+
+    <input type="submit" value="Submit">
+  </form>
+  <a href="back.html">View Allotted Subjects</a>
+</body>
+<script src="Font.js"></script>
+
+</html>
