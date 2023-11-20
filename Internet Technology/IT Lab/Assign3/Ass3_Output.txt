@@ -1,0 +1,46 @@
+..............................................................................Q1...............................................................................................
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ gcc Q1.c
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ ./a.out
+File contents:
+Dear Friend,
+I hope this letter finds you well. I wanted to tell you about this amazing course I am taking. It has been an incredible learning experience so far. The course covers a wide range of topics and has provided me with valuable knowledge and skills.
+
+Best regards,
+Your Name
+
+
+
+
+....................................................................Q2............................................................................
+
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ gcc Q2.c
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ ./a.out
+Parent: File offset sent: 12345
+Parent: File flags sent: 0
+Child: File offset received: 12345
+Child: File flags received: 0
+
+
+......................................................................Q3.............................................................................
+
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ 
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ ./a.out
+Parent: I am racing the child!
+Child: I am racing the parent!
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ gcc Q3.c
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ ./a.out
+Child: I am racing the parent!
+Parent: I am racing the child!
+
+
+........................................................................Q4...........................................................................
+
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ gcc Q4a.c -o client
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ ./client
+Time and Date: Wed Sep 13 20:34:16 2023
+
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ gcc Q4b.c -o server
+student@ProDesk-400-G4-MT:~/Desktop/2020ITB043/Assignment3$ ./server
+Server listening on port 4757...
+Time Written on client socket successfully ...
+
