@@ -1,0 +1,233 @@
+Q. Explain the little-endian & big-endian byte ordering. Explain the following functions:
+a. int inet_aton(const char *strptr, struct in_addr *addrptr);
+b. char *inet_ntoa(struct in_addr inaddr);
+c. const char *inet_ntop(int af, const void *restrict src, char *restrict dst, socket_t size);
+
+Answer:
+Little-endian and Big-endian Byte Ordering
+
+Little-endian and big-endian are two ways of storing multibyte data types (int, float, etc.) in computer memory. The difference between the two lies in the order in which the bytes are stored.
+
+Little-endian: In little-endian byte ordering, the least significant byte (LSB) is stored first, followed by the more significant bytes (MSB). This means that the value of a multibyte data type is determined by the rightmost byte.
+
+Big-endian: In big-endian byte ordering, the most significant byte (MSB) is stored first, followed by the less significant bytes (LSB). This means that the value of a multibyte data type is determined by the leftmost byte.
+
+The choice of little-endian or big-endian byte ordering is typically determined by the processor architecture. For example, Intel x86 processors use little-endian byte ordering, while Motorola 68000 processors use big-endian byte ordering.
+
+Functions
+
+**a. int inet_aton(const char strptr, struct in_addr addrptr);
+
+The inet_aton() function converts a dotted-decimal IPv4 address into a 32-bit packed binary format. It takes two arguments:
+
+strptr: A pointer to a character string containing the dotted-decimal IPv4 address.
+
+addrptr: A pointer to a struct in_addr structure that will store the packed binary IPv4 address.
+
+The function returns an integer value of 1 on success, or 0 on failure.
+
+*b. char inet_ntoa(struct in_addr inaddr);
+
+The inet_ntoa() function converts a 32-bit packed binary IPv4 address into a dotted-decimal format. It takes a single argument:
+
+inaddr: A struct in_addr structure containing the packed binary IPv4 address.
+The function returns a pointer to a character string containing the dotted-decimal IPv4 address.
+
+**c. const char *inet_ntop(int af, const void restrict src, char restrict dst, socket_t size);
+
+The inet_ntop() function converts a network address into a presentation string. It takes four arguments:
+
+af: The address family of the network address.
+
+src: A pointer to the network address to be converted.
+
+dst: A pointer to a buffer that will store the presentation string.
+
+size: The size of the buffer.
+
+The function returns a pointer to the presentation string, or NULL on failure.
+
+These functions are typically used in networking applications to convert between representations of network addresses.
+
+
+Q. How will a system retrieve its IP address through the DHCP protocol? explain with DHCP state diagram. write down some of the benefits of javascript to make the  websites?
+
+Ans:Retrieving an IP Address through DHCP
+
+The Dynamic Host Configuration Protocol (DHCP) is a network protocol that automatically assigns IP addresses and other network configuration parameters to devices on a network. When a device first connects to a DHCP-enabled network, it broadcasts a DHCP Discover message to locate a DHCP server. The DHCP server responds with a DHCP Offer message, which contains an IP address and other network configuration parameters. The device then sends a DHCP Request message to accept the offered IP address. Finally, the DHCP server sends a DHCP Acknowledgment message to confirm the IP address assignment.
+
+DHCP State Diagram
+
+The following state diagram illustrates the different stages of the DHCP process:
+
+INIT --> DHCPDISCOVER --> SELECTING --> DHCPOFFER --> REQUESTING --> BOUND
+
+INIT: The device initializes and sends a DHCPDISCOVER message to locate a DHCP server.
+
+DHCPDISCOVER: The device broadcasts a DHCPDISCOVER message to all devices on the network.
+
+SELECTING: The device receives DHCPOFFER messages from multiple DHCP servers and selects the most suitable offer.
+
+DHCPOFFER: The DHCP server sends a DHCPOFFER message to the device, offering an IP address and other network configuration parameters.
+
+REQUESTING: The device sends a DHCPREQUEST message to the selected DHCP server to accept the offered IP address.
+
+BOUND: The device receives a DHCPACK message from the DHCP server, confirming the IP address assignment.
+
+Benefits of JavaScript for Websites
+
+JavaScript is a versatile programming language that offers several advantages for developing websites:
+
+Interactivity: JavaScript enables dynamic and interactive web pages, allowing users to interact with website elements and receive real-time feedback.
+
+Dynamic Content: JavaScript can manipulate and update website content without requiring page reloads, providing a seamless and responsive user experience.
+
+Rich User Interfaces: JavaScript facilitates the creation of rich user interfaces (UIs) with animations, effects, and interactive elements, enhancing the visual appeal and interactivity of websites.
+
+Client-Side Processing: JavaScript executes code directly on the client's browser, reducing server load and improving website responsiveness.
+
+Cross-Browser Compatibility: JavaScript is widely supported by most web browsers, ensuring consistent functionality across different platforms and devices.
+
+Large Developer Community: JavaScript has a vast and active developer community, providing extensive support, resources, and libraries for web development.
+
+Integration with Other Technologies: JavaScript can seamlessly integrate with other web technologies, such as HTML, CSS, and frameworks like React and Angular, to create comprehensive web applications.
+
+Real-Time Data Updates: JavaScript can handle real-time data updates from servers using techniques like WebSockets, enabling dynamic and up-to-date content on websites.
+
+Game Development: JavaScript is a popular choice for developing web-based games, allowing for interactive and engaging gaming experiences.
+
+Accessibility Enhancements: JavaScript can be used to enhance website accessibility by providing alternative text for images, keyboard navigation, and other accessibility features.
+
+Q. Explain the three phases of simple mail transfer protocol using a proper diagram.Explain with a sequence diagram shows how the pop3 protocol pull the mail from the server? explain the working principle of a web crawler.
+
+Ans: Explanation of the Three Phases of Simple Mail Transfer Protocol (SMTP)
+
+The Simple Mail Transfer Protocol (SMTP) is a network protocol for sending and receiving email messages. It consists of three phases:
+
+1. Connection Establishment:
+
+The sending mail server initiates a TCP connection to the receiving mail server on port 25. The sending mail server sends a HELO message to the receiving mail server to identify itself.
+
+2. Mail Transfer:
+
+The sending mail server sends a MAIL FROM message to the receiving mail server, specifying the sender's email address. The sending mail server then sends one or more DATA messages, each containing a portion of the email message. The receiving mail server acknowledges each DATA message with a DATA OK message.
+
+3. Connection Termination:
+
+Once the email message has been completely transferred, the sending mail server sends a QUIT message to the receiving mail server to close the connection. The receiving mail server responds with a GOODBYE message.
+
+Diagram: https://www.educba.com/smtp-protocol/
+
+Explanation of POP3 Protocol and How It Pulls Mail from the Server
+
+The Post Office Protocol (POP3) is a network protocol for retrieving email messages from a server. It uses a client-server model, where the POP3 client connects to the POP3 server on port 110.
+
+Here is a sequence diagram that shows how the POP3 protocol pulls mail from the server:
+
+Client -> Server: AUTH USER <username>
+Server -> Client: +OK Please send your password.
+Client -> Server: AUTH PASS <password>
+Server -> Client: +OK Your login was successful.
+Client -> Server: STAT
+Server -> Client: +OK 1 100
+Client -> Server: LIST
+Server -> Client: 1 100
+Client -> Server: RETR 1
+Server -> Client: +OK 100 lines
+<email message>
+.
+Client -> Server: QUIT
+Server -> Client: +OK Goodbye.
+Explanation of the Working Principle of a Web Crawler
+
+A web crawler is a program that systematically browses the World Wide Web, indexing its content and making it searchable. It works by following hyperlinks from one page to another, downloading and parsing the content of each page it visits. The crawler then extracts information from the content, such as keywords, titles, and links, and stores it in an index.
+
+Here is a simplified overview of how a web crawler works:
+
+Start with a seed URL: The crawler starts with a list of URLs, known as seed URLs. These seed URLs can be provided manually or discovered from other sources.
+
+Fetch the URL: The crawler downloads the content of the seed URL.
+
+Extract links: The crawler extracts all the hyperlinks from the downloaded content.
+
+Add links to the queue: The crawler adds all the extracted links to a queue of URLs to be visited.
+
+Mark the URL as visited: The crawler marks the current URL as visited to avoid revisiting it in the future.
+
+Repeat steps 2 to 5: The crawler repeats steps 2 to 5 for each URL in the queue until the queue is empty.
+
+Store the extracted information: The crawler stores the extracted information, such as keywords, titles, and links, in an index.
+
+Update the index: The crawler periodically updates the index to reflect any changes in the websites it has crawled.
+
+Web crawlers play a crucial role in search engines, allowing users to search for and discover information on the World Wide Web.
+
+Q. Explain a procedure for mapping a dynamic IP Address to a permanent physical machine address in a local area network(LAN). Explain with a proper diagram how the two process transfer data between thenselves in the Internet following OSI seven-layer architecture.
+
+Ans: Mapping a Dynamic IP Address to a Permanent Physical Machine Address in a Local Area Network (LAN)
+
+The Address Resolution Protocol (ARP) is a network protocol used to map dynamic IP addresses to permanent physical machine addresses (MAC addresses) in a local area network (LAN). When a device on the LAN needs to send data to another device, it first uses ARP to find the MAC address of the destination device.
+
+Here is a procedure for mapping a dynamic IP address to a permanent physical machine address in a LAN:
+
+The sending device sends an ARP request packet to the broadcast address. The ARP request packet contains the IP address of the destination device.
+
+All devices on the LAN receive the ARP request packet. The destination device receives the ARP request packet and recognizes its own IP address.
+
+The destination device sends an ARP reply packet to the sending device. The ARP reply packet contains the MAC address of the destination device.
+
+The sending device receives the ARP reply packet and stores the MAC address of the destination device in its ARP cache.
+
+Once the MAC address of the destination device is stored in the ARP cache, the sending device can send data packets directly to the destination device using its MAC address.
+
+Diagram: https://www.fortinet.com/resources/cyberglossary/what-is-arp
+
+Data Transfer between Two Processes in the Internet following OSI seven-layer architecture
+
+The Open Systems Interconnection (OSI) model is a conceptual framework that divides the communication process into seven layers:
+
+Application Layer: The application layer provides services to applications that run on the network, such as file transfer, email, and web browsing.
+
+Presentation Layer: The presentation layer formats data for transmission and translates between different data formats.
+
+Session Layer: The session layer manages the communication session between two processes, including establishing, maintaining, and terminating the connection.
+
+Transport Layer: The transport layer provides reliable data transfer between two processes, including error detection and correction, flow control, and congestion control.
+
+Network Layer: The network layer routes data packets across the network, determining the best path for the packets to take.
+
+Data Link Layer: The data link layer frames data packets for transmission over a physical link, including error detection and correction, and access control.
+
+Physical Layer: The physical layer transmits and receives raw bits over a physical medium, such as a cable or wireless signal.
+
+When two processes on the Internet exchange data, the data passes through all seven layers of the OSI model on both the sending and receiving machines. Each layer performs its specific function to ensure that the data is sent and received correctly.
+
+Here is a simplified overview of how data is transferred between two processes in the Internet following the OSI seven-layer architecture:
+
+Application layer: The application layer on the sending machine initiates the data transfer and provides the data to be sent.
+
+Presentation layer: The presentation layer on the sending machine formats the data into a format that can be transmitted over the network.
+
+Session layer: The session layer on the sending machine establishes a communication session with the session layer on the receiving machine.
+
+Transport layer: The transport layer on the sending machine segments the data into packets and adds transport layer headers to each packet. The transport layer also ensures that the data is delivered reliably to the transport layer on the receiving machine.
+
+Network layer: The network layer on the sending machine adds network layer headers to each packet and determines the best path for the packets to take to the receiving machine.
+
+Data link layer: The data link layer on the sending machine frames the packets for transmission over the physical link and transmits the frames to the physical layer.
+
+Physical layer: The physical layer on the sending machine transmits the bits of the frames over the physical medium.
+
+Physical layer: The physical layer on the receiving machine receives the bits of the frames and transmits them to the data link layer.
+
+Data link layer: The data link layer on the receiving machine unframes the packets and removes the data link layer headers.
+
+Network layer: The network layer on the receiving machine removes the network layer headers from the packets.
+
+Transport layer: The transport layer on the receiving machine assembles the packets into the original data stream and removes the transport layer headers.
+
+Session layer: The session layer on the receiving machine maintains the communication session with the session layer on the sending machine.
+
+Presentation layer: The presentation layer on the receiving machine translates the data back into the original format.
+
+Application layer: The application layer on the receiving machine receives the data and provides it to the user or application.
