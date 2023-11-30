@@ -75,6 +75,15 @@ Economics:
 6. Measure of Money Supply:
    - The measure of money supply typically includes various components, with M1, M2, and M3 being common classifications. M1 includes the most liquid assets like physical currency and checking deposits, while M2 and M3 include broader categories of assets like savings accounts and time deposits.
 
+Q. Demand of money:
+   - The demand for money is the desired amount of money that individuals and institutions want to hold. It is a key concept in monetary economics and is influenced by a variety of factors, including:
+
+Transaction motive: People need money to conduct everyday transactions, such as buying goods and services. The more transactions people make, the more money they will need to hold.
+
+Precautionary motive: People also hold money as a precaution against unexpected expenses. The greater the uncertainty in the economy, the more money people will want to hold.
+
+Speculative motive: People may also hold money if they believe that its value will increase in the future. This is known as the speculative motive.
+
 7. How Commercial Banks Create Money Supply:
    - Commercial banks create money through the process of fractional reserve banking. When people deposit money in banks, banks are required to hold only a fraction of those deposits as reserves and can lend out the rest. This lending process effectively creates new money in the form of loans.
 
